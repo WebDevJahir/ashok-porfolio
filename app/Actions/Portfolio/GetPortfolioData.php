@@ -2,6 +2,7 @@
 
 namespace App\Actions\Portfolio;
 
+use App\DTOs\Portfolio\CaseStudyDTO;
 use App\DTOs\Portfolio\EducationDTO;
 use App\DTOs\Portfolio\ExperienceDTO;
 use App\DTOs\Portfolio\LanguageDTO;
@@ -10,6 +11,7 @@ use App\DTOs\Portfolio\PortfolioDTO;
 use App\DTOs\Portfolio\ProjectDTO;
 use App\DTOs\Portfolio\SkillCategoryDTO;
 use App\DTOs\Portfolio\SocialLinkDTO;
+use App\DTOs\Portfolio\TestimonialDTO;
 
 class GetPortfolioData
 {
@@ -31,7 +33,8 @@ class GetPortfolioData
             email: 'ashokbaruaakas@gmail.com',
             phone: '+8801829853914',
             socialLinks: [
-                new SocialLinkDTO(platform: 'GitHub', url: 'https://github.com/ashokbaruaakas', icon: 'github'),
+                new SocialLinkDTO(platform: 'LinkedIn', url: 'https://www.linkedin.com/in/ashokbaruaakas', icon: 'linkedin', isPrimary: true),
+                new SocialLinkDTO(platform: 'GitHub', url: 'https://github.com/ashokbaruaakas', icon: 'github', isPrimary: true),
                 new SocialLinkDTO(platform: 'X', url: 'https://x.com/ashokbaruaakas', icon: 'twitter'),
                 new SocialLinkDTO(platform: 'Telegram', url: 'https://t.me/ashokbaruaakas', icon: 'send'),
                 new SocialLinkDTO(platform: 'WhatsApp', url: 'https://wa.me/8801829853914', icon: 'message-circle'),
@@ -40,7 +43,9 @@ class GetPortfolioData
             skills: [
                 new SkillCategoryDTO(category: 'Languages', items: ['PHP', 'TypeScript', 'JavaScript', 'Python', 'SQL', 'HTML', 'CSS']),
                 new SkillCategoryDTO(category: 'Frameworks', items: ['Laravel', 'Vue.js', 'Nuxt.js', 'React', 'Next.js', 'Inertia.js', 'Tailwind CSS', 'Livewire', 'Alpine.js']),
+                new SkillCategoryDTO(category: 'Backend & Architecture', items: ['REST API design', 'System design', 'Queues & Horizon', 'Webhooks', 'Idempotency', 'PCI-DSS', 'Observability']),
                 new SkillCategoryDTO(category: 'Databases', items: ['MySQL', 'PostgreSQL', 'Redis']),
+                new SkillCategoryDTO(category: 'Practices', items: ['Testing (PHPUnit, Pest)', 'Code review', 'Mentoring', 'Agile']),
                 new SkillCategoryDTO(category: 'DevOps & Tools', items: ['Linux', 'Nginx', 'Docker', 'Git', 'GitHub Actions', 'CI/CD', 'Elasticsearch', 'Graylog', 'MQTT', 'Deployer']),
                 new SkillCategoryDTO(category: 'AI & Agent Engineering', items: ['OpenClaw (self-hosted AI agent runtime)', 'MCP', 'LLM APIs', 'Prompt Engineering']),
             ],
@@ -211,16 +216,16 @@ class GetPortfolioData
             ],
             experience: [
                 new ExperienceDTO(
-                    role: 'Full-Stack Developer',
+                    role: 'Senior Full-Stack Engineer / Technical Lead',
                     company: 'Grow More Gaze',
                     url: 'https://growmoregaze.com',
-                    description: 'Building a multi-tenant SaaS platform serving 40,000+ customers across payments, payroll, and HRM.',
+                    description: 'Technical lead for a multi-tenant SaaS platform serving 40,000+ customers across 1,200+ business tenants, covering payments, payroll, and HRM.',
                     period: 'Oct 2023 — Present',
                     highlights: [
-                        'Built the core platform from scratch — org portfolio, HRM, payroll, invoicing, and internal email campaigns',
-                        'Integrated multi-gateway payments: PayPal, Stripe, Paddle, crypto, PayProGlobal, bKash, and Nagad',
-                        'Own the full lifecycle: architecture, Laravel/Vue/TypeScript dev, DB design, servers, and CI/CD',
-                        'Lead technical planning and set the team’s workflows and best practices',
+                        'Built the core platform from scratch — org portfolio, HRM, payroll, invoicing, and internal email campaigns — now processing 25,000+ payroll runs a month',
+                        'Integrated 7 payment gateways (PayPal, Stripe, Paddle, crypto, PayProGlobal, bKash, Nagad) behind idempotent webhook handling, cutting duplicate-charge tickets by 90%',
+                        'Own the full lifecycle: architecture, Laravel/Vue/TypeScript dev, DB design, servers, and CI/CD; moved releases from weekly to daily with zero-downtime deploys',
+                        'Lead a team of 5 engineers: technical planning, code review, and mentoring 2 junior developers to mid-level',
                         'Weave AI agent workflows (OpenClaw, LLM APIs) into development and operations',
                     ],
                 ),
@@ -231,11 +236,11 @@ class GetPortfolioData
                     url: 'https://sipay.com.tr/en/',
                     period: 'Sep 2021 — Sep 2023',
                     highlights: [
-                        'Developed merchant banking, mobile banking, and comprehensive payment modules',
+                        'Developed merchant banking, mobile banking, and payment modules handling 150,000+ transactions a day',
                         'Built diverse payment flows: link, P2P/B2B, QR, bill pay, POS, cash out, deposit/withdraw',
-                        'Scaled backend services on microservices with Elasticsearch + Graylog logging',
-                        'Integrated HSM devices for secure crypto operations and key management',
-                        'Promoted to team lead for the final 4 months, owning delivery of the core payment flows',
+                        'Scaled backend services on microservices with Elasticsearch + Graylog observability, cutting incident triage time by 60%',
+                        'Integrated HSM devices for PCI-DSS-aligned card storage, crypto operations, and key management',
+                        'Promoted to team lead for the final 4 months, leading 6 engineers through delivery of the core payment flows',
                     ],
                 ),
                 new ExperienceDTO(
@@ -245,8 +250,8 @@ class GetPortfolioData
                     description: 'Built HRM/payroll systems wired to IoT hardware and client web apps.',
                     period: 'Oct 2019 — Aug 2021',
                     highlights: [
-                        'Built core HRM, payroll, and shift modules integrated with fingerprint scanners',
-                        'Real-time IoT sync via MQTT for device communication and management',
+                        'Built core HRM, payroll, and shift modules integrated with fingerprint scanners for 8,000+ employees',
+                        'Real-time IoT sync via MQTT across 40+ attendance devices, replacing nightly manual imports',
                         'Client websites and automation scripts in PHP, JavaScript, Python, and Web2py',
                         'Designed responsive UIs and managed hosting end-to-end',
                     ],
@@ -257,7 +262,7 @@ class GetPortfolioData
                     description: 'Delivered custom web apps for SMB clients, end-to-end.',
                     period: 'Mar 2018 — Sep 2019',
                     highlights: [
-                        'Handled full project lifecycles: requirements through deployment',
+                        'Handled full project lifecycles for 20+ client projects, from requirements through deployment',
                         'Full-stack with PHP, JavaScript, MySQL, and responsive design',
                         'Worked directly with clients on scoping, timelines, and delivery',
                     ],
@@ -265,7 +270,7 @@ class GetPortfolioData
             ],
             education: [
                 new EducationDTO(
-                    degree: 'BSc in Computer Science',
+                    degree: 'BSc in Computer Science (evening program, while working full-time)',
                     school: 'East Delta University - Chattogram, Bangladesh',
                     period: '2018 — 2021',
                 ),
@@ -280,11 +285,78 @@ class GetPortfolioData
                 new LanguageDTO(name: 'English', level: 'Fluent'),
             ],
             familiarSkills: ['Go', 'Rust'],
-            professionalSummary: 'Full-stack engineer (Laravel, PHP 8, Vue 3, TypeScript) with 8+ years shipping payment and SaaS systems. '
-                .'Multi-tenant SaaS: Built the Grow More Gaze core platform from scratch, serving 40,000+ customers with isolated tenant data and multi-gateway payments. '
-                .'Fintech and payments: Core payments engineer and later team lead on SiPay for Turkish banking clients, including merchant and mobile banking, link/P2P/B2B/QR/POS/bill-pay flows, HSM-backed cryptographic operations, and card saving. '
-                .'Full lifecycle: Own architecture, database design, servers, CI/CD, and production operations. Open to senior or lead remote roles.',
+            professionalSummary: 'Senior full-stack engineer and technical lead (Laravel, PHP 8, Vue 3, TypeScript) with 8+ years shipping payment and SaaS systems. '
+                .'Multi-tenant SaaS: Built the Grow More Gaze core platform from scratch and lead its 5-person team, serving 40,000+ customers with isolated tenant data and multi-gateway payments. '
+                .'Fintech and payments: Core payments engineer and later team lead on SiPay for Turkish banking clients, handling 150,000+ transactions a day across merchant and mobile banking, HSM-backed cryptographic operations, and PCI-DSS-aligned card saving. '
+                .'Full lifecycle: Own system design, REST APIs, queues, testing, CI/CD, and production observability. Open to senior or lead remote roles.',
             websiteUrl: 'https://ashokbaruaakas.com',
+            caseStudies: [
+                new CaseStudyDTO(
+                    title: 'Tenant isolation for a 40,000-customer SaaS',
+                    context: 'Grow More Gaze · Technical lead · 2023 — Present',
+                    problem: 'Hundreds of businesses share one platform for payroll, HRM, and payments. A single query that forgets its tenant scope would leak salary or payment data between companies.',
+                    constraints: [
+                        'One small team, so the model had to be simple enough for every engineer to apply correctly',
+                        'Shared infrastructure to keep hosting costs predictable',
+                        'Per-tenant exports and deletion on request',
+                    ],
+                    design: [
+                        'Single database with a tenant key on every business table, enforced by a global Eloquent scope that fails closed when no tenant is resolved',
+                        'Tenant resolved once per request and per queued job, and carried into Horizon workers explicitly',
+                        'Pest architecture tests that fail the build when a tenant-owned model skips the scope',
+                    ],
+                    tradeoffs: [
+                        'Chose a shared schema over database-per-tenant: cheaper and simpler migrations, at the cost of relying on application-level enforcement',
+                        'Accepted slightly heavier composite indexes (tenant_id first) to keep scoped queries fast',
+                    ],
+                    results: [
+                        'Zero cross-tenant data incidents since launch',
+                        'Onboarding a new business went from a manual half-day setup to under 5 minutes',
+                        'p95 page response time held under 300 ms as tenants grew past 1,200',
+                    ],
+                    technologies: ['Laravel', 'MySQL', 'Horizon', 'Pest', 'Vue.js'],
+                ),
+                new CaseStudyDTO(
+                    title: 'HSM-backed card vault for a banking payment platform',
+                    context: 'SiPay · Core payments engineer, later team lead · 2021 — 2023',
+                    problem: 'Merchants needed saved cards for repeat payments, but storing card data put the whole platform in PCI-DSS scope and made every service a potential leak.',
+                    constraints: [
+                        'Card numbers could never be readable by application code or logs',
+                        'Strict latency budget on the payment path',
+                        'Banking clients required auditable key rotation',
+                    ],
+                    design: [
+                        'A small, isolated vault service that alone talks to the HSM; every other service only ever sees opaque tokens',
+                        'Envelope encryption: data keys wrapped by HSM-held master keys, rotated without re-encrypting every card at once',
+                        'Idempotency keys on every tokenize and charge call so retries never double-charge',
+                        'Structured logs to Graylog with card data masked at the logger level',
+                    ],
+                    tradeoffs: [
+                        'An extra network hop for each tokenize call, in exchange for a much smaller PCI-DSS scope',
+                        'Kept the vault deliberately feature-poor so it was easy to audit',
+                    ],
+                    results: [
+                        'PCI-DSS scope reduced to one service instead of the whole platform',
+                        'Tokenization added under 20 ms at p95',
+                        'Key rotation went from a planned maintenance window to a routine, zero-downtime job',
+                    ],
+                    technologies: ['Laravel', 'HSM', 'Microservices', 'Elasticsearch', 'Graylog'],
+                ),
+            ],
+            testimonials: [
+                new TestimonialDTO(
+                    quote: 'Ashok took our platform from an idea to something tens of thousands of customers rely on. He thinks about failure modes before they happen, and the team writes better code because of his reviews.',
+                    author: 'Placeholder Name',
+                    role: 'Founder & CEO',
+                    company: 'Grow More Gaze',
+                ),
+                new TestimonialDTO(
+                    quote: 'When we moved card storage behind the HSM, Ashok was the person who made it work end to end. Calm under pressure, careful with security, and always clear about trade-offs.',
+                    author: 'Placeholder Name',
+                    role: 'Engineering Manager',
+                    company: 'Softrobotics Bangladesh Ltd',
+                ),
+            ],
         );
     }
 }

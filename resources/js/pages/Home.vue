@@ -2,12 +2,14 @@
 import { Head } from '@inertiajs/vue3';
 import { computed, h } from 'vue';
 import PortfolioAbout from '@/components/portfolio/PortfolioAbout.vue';
+import PortfolioCaseStudies from '@/components/portfolio/PortfolioCaseStudies.vue';
 import PortfolioConnect from '@/components/portfolio/PortfolioConnect.vue';
 import PortfolioEducation from '@/components/portfolio/PortfolioEducation.vue';
 import PortfolioExperience from '@/components/portfolio/PortfolioExperience.vue';
 import PortfolioHero from '@/components/portfolio/PortfolioHero.vue';
 import PortfolioProjects from '@/components/portfolio/PortfolioProjects.vue';
 import PortfolioSkills from '@/components/portfolio/PortfolioSkills.vue';
+import PortfolioTestimonials from '@/components/portfolio/PortfolioTestimonials.vue';
 import {
     buildPersonSchema,
     serializeStructuredData,
@@ -141,12 +143,22 @@ const structuredDataTag = () =>
                 aria-hidden="true"
                 class="-mt-20 h-px max-w-xs self-center bg-gradient-to-r from-transparent via-emerald-500/20 to-transparent lg:-mt-24"
             />
+            <PortfolioCaseStudies :portfolio="portfolio" />
+            <div
+                aria-hidden="true"
+                class="-mt-20 h-px max-w-xs self-center bg-gradient-to-r from-transparent via-emerald-500/20 to-transparent lg:-mt-24"
+            />
             <PortfolioExperience :portfolio="portfolio" />
             <div
                 aria-hidden="true"
                 class="-mt-20 h-px max-w-xs self-center bg-gradient-to-r from-transparent via-emerald-500/20 to-transparent lg:-mt-24"
             />
             <PortfolioEducation :portfolio="portfolio" />
+            <div
+                aria-hidden="true"
+                class="-mt-20 h-px max-w-xs self-center bg-gradient-to-r from-transparent via-emerald-500/20 to-transparent lg:-mt-24"
+            />
+            <PortfolioTestimonials :portfolio="portfolio" />
             <div
                 aria-hidden="true"
                 class="-mt-20 h-px max-w-xs self-center bg-gradient-to-r from-transparent via-emerald-500/20 to-transparent lg:-mt-24"

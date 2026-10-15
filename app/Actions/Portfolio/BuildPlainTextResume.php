@@ -9,12 +9,15 @@ class BuildPlainTextResume
     public function handle(PortfolioDTO $portfolio): string
     {
         $githubUrl = "https://github.com/{$portfolio->githubUsername}";
+        $linkedInUrl = null;
 
         foreach ($portfolio->socialLinks as $socialLink) {
             if ($socialLink->platform === 'GitHub') {
                 $githubUrl = $socialLink->url;
+            }
 
-                break;
+            if ($socialLink->platform === 'LinkedIn') {
+                $linkedInUrl = $socialLink->url;
             }
         }
 
@@ -29,6 +32,10 @@ class BuildPlainTextResume
             "Phone: {$portfolio->phone}",
             "GitHub: {$githubUrl}",
         ];
+
+        if ($linkedInUrl !== null) {
+            $lines[] = "LinkedIn: {$linkedInUrl}";
+        }
 
         if ($portfolio->websiteUrl !== '') {
             $lines[] = "Website: {$portfolio->websiteUrl}";

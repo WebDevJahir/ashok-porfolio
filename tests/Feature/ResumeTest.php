@@ -26,13 +26,13 @@ test('resume and home share the same portfolio data and positioning', function (
         ->and($resumePortfolio['tagline'])
         ->toBe('Senior Full-Stack Engineer — Fintech & Multi-Tenant SaaS')
         ->and($resumePortfolio['professionalSummary'])
-        ->toStartWith('Full-stack engineer (Laravel, PHP 8, Vue 3, TypeScript) with 8+ years')
+        ->toStartWith('Senior full-stack engineer and technical lead (Laravel, PHP 8, Vue 3, TypeScript) with 8+ years')
         ->and($resumePortfolio['familiarSkills'])->toBe(['Go', 'Rust']);
 
     $response->assertSee('Familiar with: Go, Rust')
         ->assertSee('HSM-backed cryptographic operations')
         ->assertSee('40,000+ customers')
-        ->assertSee('Full lifecycle: Own architecture');
+        ->assertSee('Full lifecycle: Own system design');
 });
 
 test('the resume page shares the public layout with a footer', function () {
@@ -79,19 +79,20 @@ test('plain-text resume uses the shared portfolio data', function (): void {
         ->assertSee('Email: ashokbaruaakas@gmail.com')
         ->assertSee('Phone: +8801829853914')
         ->assertSee('GitHub: https://github.com/ashokbaruaakas')
+        ->assertSee('LinkedIn: https://www.linkedin.com/in/ashokbaruaakas')
         ->assertSee('Website: https://ashokbaruaakas.com')
         ->assertSee('Professional Summary')
         ->assertSee('Fintech and payments: Core payments engineer and later team lead on SiPay')
         ->assertSee('Technical Skills')
         ->assertSee('Experience')
-        ->assertSee('Full-Stack Developer — Grow More Gaze | Oct 2023 — Present')
+        ->assertSee('Senior Full-Stack Engineer / Technical Lead — Grow More Gaze | Oct 2023 — Present')
         ->assertSee('Senior Software Engineer — Softrobotics Bangladesh Ltd | Sep 2021 — Sep 2023')
         ->assertSee('Full-Stack Web Developer & Designer — Stellar BD Ltd | Oct 2019 — Aug 2021', false)
         ->assertSee('Full-Stack Web Developer — Multiplex Web Design | Mar 2018 — Sep 2019')
         ->assertSee('Additional Projects')
         ->assertSee('Open Source')
         ->assertSee('Education')
-        ->assertSee('BSc in Computer Science — East Delta University - Chattogram, Bangladesh | 2018 — 2021')
+        ->assertSee('BSc in Computer Science (evening program, while working full-time) — East Delta University - Chattogram, Bangladesh | 2018 — 2021')
         ->assertSee('Diploma in Computer Science — Bangladesh Sweden Polytechnic Institute - Kaptai, Rangamati, Bangladesh | 2013 — 2017')
         ->assertSee('Languages');
 });
