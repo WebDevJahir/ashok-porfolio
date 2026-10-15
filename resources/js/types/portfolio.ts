@@ -67,6 +67,7 @@ export type Portfolio = {
     tagline: string;
     bio: string;
     location: string;
+    availability: string;
     currentWork: string;
     sideProjects: string;
     githubUsername: string;

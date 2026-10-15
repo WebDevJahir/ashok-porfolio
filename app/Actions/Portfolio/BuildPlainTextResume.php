@@ -23,7 +23,8 @@ class BuildPlainTextResume
             $portfolio->tagline,
             '',
             'Contact Information',
-            "Location: {$portfolio->location}",
+            "Location: {$portfolio->location} (UTC+6)",
+            "Availability: {$portfolio->availability}",
             "Email: {$portfolio->email}",
             "Phone: {$portfolio->phone}",
             "GitHub: {$githubUrl}",
@@ -56,6 +57,10 @@ class BuildPlainTextResume
         foreach ($portfolio->experience as $experience) {
             $lines[] = "{$experience->role} — {$experience->company} | {$experience->period}";
             $lines[] = $experience->description;
+
+            if ($experience->url !== null) {
+                $lines[] = "Company: {$experience->url}";
+            }
 
             foreach ($experience->highlights as $highlight) {
                 $lines[] = "- {$highlight}";

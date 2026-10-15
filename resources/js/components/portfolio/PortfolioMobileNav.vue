@@ -49,7 +49,7 @@ watch(activeId, async () => {
                 :id="`mobile-nav-${section.id}`"
                 :key="section.id"
                 type="button"
-                class="flex shrink-0 snap-center items-center gap-1.5 rounded-full px-4 py-2 text-xs font-medium tracking-wide whitespace-nowrap uppercase transition-colors"
+                class="flex shrink-0 snap-center items-center gap-1.5 rounded-full px-3 py-2 text-xs font-medium tracking-wide whitespace-nowrap uppercase transition-colors sm:px-4"
                 :class="
                     activeId === section.id
                         ? 'bg-emerald-500/10 text-emerald-700 dark:text-emerald-400'

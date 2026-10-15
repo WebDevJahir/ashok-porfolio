@@ -21,8 +21,9 @@ class GetPortfolioData
         return new PortfolioDTO(
             name: 'Ashok Barua',
             tagline: 'Senior Full-Stack Engineer — Fintech & Multi-Tenant SaaS',
-            bio: "I build scalable, production-ready web applications with **PHP, Laravel, TypeScript, and Vue** — from backend architecture and APIs to deployment and production operations.\n\n**7+ years building real-world systems, including SaaS platforms, payment infrastructure, and enterprise applications.**",
+            bio: "I build scalable, production-ready web applications with **PHP, Laravel, TypeScript, and Vue** — from backend architecture and APIs to deployment and production operations.\n\n**8+ years building real-world systems, including SaaS platforms, payment infrastructure, and enterprise applications.** Open to remote roles from UTC+6.",
             location: 'Chattogram, Bangladesh',
+            availability: 'Open to remote',
             currentWork: 'Grow More Gaze — a multi-tenant SaaS platform serving 40,000+ customers (payments, payroll, HRM)',
             sideProjects: 'Open-source at @thesoftpulze · AI agent workflows',
             githubUsername: 'ashokbaruaakas',
@@ -40,8 +41,8 @@ class GetPortfolioData
                 new SkillCategoryDTO(category: 'Languages', items: ['PHP', 'TypeScript', 'JavaScript', 'Python', 'SQL', 'HTML', 'CSS']),
                 new SkillCategoryDTO(category: 'Frameworks', items: ['Laravel', 'Vue.js', 'Nuxt.js', 'React', 'Next.js', 'Inertia.js', 'Tailwind CSS', 'Livewire', 'Alpine.js']),
                 new SkillCategoryDTO(category: 'Databases', items: ['MySQL', 'PostgreSQL', 'Redis']),
-                new SkillCategoryDTO(category: 'DevOps & Tools', items: ['Linux', 'Nginx', 'Docker', 'Git', 'GitHub Actions', 'VPS', 'CI/CD', 'Elasticsearch', 'Graylog', 'Composer', 'VS Code', 'MQTT', 'Deployer', 'Certbot']),
-                new SkillCategoryDTO(category: 'AI & Agent Engineering', items: ['OpenClaw', 'MCP', 'LLM APIs', 'Prompt Engineering', 'AI-Augmented Development']),
+                new SkillCategoryDTO(category: 'DevOps & Tools', items: ['Linux', 'Nginx', 'Docker', 'Git', 'GitHub Actions', 'CI/CD', 'Elasticsearch', 'Graylog', 'MQTT', 'Deployer']),
+                new SkillCategoryDTO(category: 'AI & Agent Engineering', items: ['OpenClaw (self-hosted AI agent runtime)', 'MCP', 'LLM APIs', 'Prompt Engineering']),
             ],
             projects: [
                 new ProjectDTO(
@@ -54,13 +55,13 @@ class GetPortfolioData
                     language: 'PHP',
                     tier: 1,
                     period: '2021 — 2023',
-                    role: 'Led development of core payment flows and served as team lead for the final four months.',
+                    role: 'Core payments engineer, promoted to team lead for the final four months.',
                     highlights: [
                         'Mobile banking, merchant banking, and multiple payment gateway integrations',
                         'Card saving system with HSM-backed key and crypto management',
                         'Microservices architecture with Elasticsearch and Graylog for logging and monitoring',
                     ],
-                    metric: 'Team Lead',
+                    metric: 'Team lead (final 4 mo)',
                     demoUrl: 'https://sipay.com.tr/en/',
                     linkLabel: 'Product',
                 ),
@@ -90,7 +91,7 @@ class GetPortfolioData
                     description: 'An HRM system handling attendance management, full payroll, and shift management at scale.',
                     owner: null,
                     repo: null,
-                    technologies: ['Web2py', 'MySQL', 'MQTT', 'IoT'],
+                    technologies: ['Python', 'MySQL', 'MQTT', 'IoT'],
                     stars: 0,
                     language: 'Python',
                     tier: 1,
@@ -108,7 +109,7 @@ class GetPortfolioData
                     description: 'A live client platform for worldwide bulk-order quotes and company portfolios, used in production.',
                     owner: null,
                     repo: null,
-                    technologies: ['Laravel', 'Vue.js', 'TypeScript', 'Tailwind', 'MySQL'],
+                    technologies: ['Laravel', 'Vue.js', 'TypeScript', 'Tailwind CSS', 'MySQL'],
                     stars: 0,
                     language: 'PHP',
                     demoUrl: 'https://bizztechsz.com',
@@ -119,8 +120,8 @@ class GetPortfolioData
                     description: 'An open-source Laravel starter kit with Vue 3 and Inertia.js that I maintain.',
                     owner: 'thesoftpulze',
                     repo: 'laravibe-vue',
-                    technologies: ['Laravel 13', 'Vue 3', 'Inertia.js', 'TypeScript', 'Tailwind'],
-                    stars: 0,
+                    technologies: ['Laravel', 'Vue.js', 'Inertia.js', 'TypeScript', 'Tailwind CSS'],
+                    stars: 2,
                     language: 'PHP',
                     demoUrl: 'https://github.com/thesoftpulze/laravibe-vue',
                     isPublicRepo: true,
@@ -130,9 +131,9 @@ class GetPortfolioData
                     description: 'A Docker and AI tooling wrapper for OpenClaw, published to GHCR through automated CI/CD.',
                     owner: 'ashokbaruaakas',
                     repo: 'clawkit',
-                    technologies: ['Docker', 'GitHub Actions', 'CI/CD', 'OpenClaw', 'AI'],
+                    technologies: ['Docker', 'GitHub Actions', 'CI/CD', 'OpenClaw'],
                     stars: 1,
-                    language: 'Dockerfile',
+                    language: 'Docker',
                     demoUrl: 'https://github.com/ashokbaruaakas/clawkit',
                     metric: '500+ image pulls',
                     isPublicRepo: true,
@@ -161,7 +162,7 @@ class GetPortfolioData
                     secondaryUrl: 'https://packagist.org/packages/softpulze/laravibe-standards',
                 ),
                 new OpenSourceContributionDTO(
-                    title: 'Clawkit',
+                    title: 'clawkit',
                     description: 'Built an OpenClaw wrapper image with Linuxbrew and development tooling, published to GHCR with automated releases.',
                     organization: 'Ashok Barua',
                     type: 'Project',
@@ -172,7 +173,7 @@ class GetPortfolioData
                     metric: '500+ image pulls',
                 ),
                 new OpenSourceContributionDTO(
-                    title: 'LaraVibe Vue',
+                    title: 'LaraVibe-Vue',
                     description: 'Built a modern Laravel 13 starter kit with Vue 3, Inertia.js v3, SSR, authentication, and type-safe route helpers.',
                     organization: 'The SoftPulze',
                     type: 'Project',
@@ -210,8 +211,9 @@ class GetPortfolioData
             ],
             experience: [
                 new ExperienceDTO(
-                    role: 'Full Stack Developer',
+                    role: 'Full-Stack Developer',
                     company: 'Grow More Gaze',
+                    url: 'https://growmoregaze.com',
                     description: 'Building a multi-tenant SaaS platform serving 40,000+ customers across payments, payroll, and HRM.',
                     period: 'Oct 2023 — Present',
                     highlights: [
@@ -225,19 +227,21 @@ class GetPortfolioData
                 new ExperienceDTO(
                     role: 'Senior Software Engineer',
                     company: 'Softrobotics Bangladesh Ltd',
-                    description: 'Led development of SiPay, a banking payment platform built for institutional clients.',
+                    description: 'Core payments engineer on SiPay, a banking payment platform built for institutional clients.',
+                    url: 'https://sipay.com.tr/en/',
                     period: 'Sep 2021 — Sep 2023',
                     highlights: [
                         'Developed merchant banking, mobile banking, and comprehensive payment modules',
                         'Built diverse payment flows: link, P2P/B2B, QR, bill pay, POS, cash out, deposit/withdraw',
                         'Scaled backend services on microservices with Elasticsearch + Graylog logging',
                         'Integrated HSM devices for secure crypto operations and key management',
-                        'Led development of core payment flows and served as team lead for the final 4 months',
+                        'Promoted to team lead for the final 4 months, owning delivery of the core payment flows',
                     ],
                 ),
                 new ExperienceDTO(
-                    role: 'Full-stack Web Developer & Designer',
+                    role: 'Full-Stack Web Developer & Designer',
                     company: 'Stellar BD Ltd',
+                    url: 'https://stellarbd.com',
                     description: 'Built HRM/payroll systems wired to IoT hardware and client web apps.',
                     period: 'Oct 2019 — Aug 2021',
                     highlights: [
@@ -248,7 +252,7 @@ class GetPortfolioData
                     ],
                 ),
                 new ExperienceDTO(
-                    role: 'Full-stack Web Developer',
+                    role: 'Full-Stack Web Developer',
                     company: 'Multiplex Web Design',
                     description: 'Delivered custom web apps for SMB clients, end-to-end.',
                     period: 'Mar 2018 — Sep 2019',
@@ -262,7 +266,7 @@ class GetPortfolioData
             education: [
                 new EducationDTO(
                     degree: 'BSc in Computer Science',
-                    school: 'East Delta University - Chittagong, Bangladesh',
+                    school: 'East Delta University - Chattogram, Bangladesh',
                     period: '2018 — 2021',
                 ),
                 new EducationDTO(
@@ -276,9 +280,10 @@ class GetPortfolioData
                 new LanguageDTO(name: 'English', level: 'Fluent'),
             ],
             familiarSkills: ['Go', 'Rust'],
-            professionalSummary: 'Fintech and payments: Led development of SiPay for Turkish banking clients, including merchant and mobile banking, link/P2P/B2B/QR/POS/bill-pay flows, HSM-backed cryptographic operations, and card saving. '
+            professionalSummary: 'Full-stack engineer (Laravel, PHP 8, Vue 3, TypeScript) with 8+ years shipping payment and SaaS systems. '
                 .'Multi-tenant SaaS: Built the Grow More Gaze core platform from scratch, serving 40,000+ customers with isolated tenant data and multi-gateway payments. '
-                .'Full lifecycle: Own architecture, database design, servers, CI/CD, and production operations.',
+                .'Fintech and payments: Core payments engineer and later team lead on SiPay for Turkish banking clients, including merchant and mobile banking, link/P2P/B2B/QR/POS/bill-pay flows, HSM-backed cryptographic operations, and card saving. '
+                .'Full lifecycle: Own architecture, database design, servers, CI/CD, and production operations. Open to senior or lead remote roles.',
             websiteUrl: 'https://ashokbaruaakas.com',
         );
     }

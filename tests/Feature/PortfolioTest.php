@@ -112,7 +112,7 @@ test('the portfolio page exposes featured projects', function () {
         ->and($projects[4])->toMatchArray([
             'name' => 'LaraVibe-Vue',
             'isPublicRepo' => true,
-            'stars' => 0,
+            'stars' => 2,
         ])
         ->and($projects[5])->toMatchArray([
             'name' => 'clawkit',
@@ -150,7 +150,7 @@ test('the portfolio page exposes education and languages', function () {
 
     expect($response->inertiaProps('portfolio.education')[0])->toMatchArray([
         'degree' => 'BSc in Computer Science',
-        'school' => 'East Delta University - Chittagong, Bangladesh',
+        'school' => 'East Delta University - Chattogram, Bangladesh',
     ]);
 
     expect($response->inertiaProps('portfolio.languages')[0])->toMatchArray([
